@@ -176,7 +176,6 @@
     <Content Include="Angular\src\tslint.json" />
     <Content Include="Angular\e2e\tsconfig.e2e.json" />
     <Content Include="Angular\.editorconfig" />
-    <Content Include="Angular\.gitignore" />
     <Content Include="Angular\angular.json" />
     <Content Include="Angular\package-lock.json" />
     <Content Include="Angular\package.json" />

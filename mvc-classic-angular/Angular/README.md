@@ -3,6 +3,11 @@
 USE this link for instructions:
 https://developer.okta.com/blog/2018/12/21/build-basic-web-app-with-mvc-angular
 
+Build instructions after clone:
+1. npm install
+2. ng build --extractCss --watch
+3. (Optionally, if refrences not found in project) package manager console:  Update-Package -reinstall
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 

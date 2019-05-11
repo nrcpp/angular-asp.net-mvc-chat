@@ -7,7 +7,7 @@ Build instructions after clone:
 1. npm install
 2. ng build --extractCss --watch
 3. (Optionally, if refrences not found in project) package manager console:  Update-Package -reinstall
-4. In case of "roslyn\csc.exe not found" error, install "Microsoft.CodeDom.Providers" nuget package
+4. In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 

@@ -1,0 +1,14 @@
+
+<div style="text-align:center">
+  <h1>
+    Jogging Records
+  </h1>
+  <h2 style="color: blue">
+    Subtitle
+  </h2>
+
+  <span *ngFor="let record of joggingRecords">
+    {{record.id}} - {{record.description}} - {{record.distance}}
+    <br />
+  </span>
+</div>

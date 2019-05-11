@@ -9,11 +9,30 @@ Build instructions after clone:
 3. (Optionally, if refrences not found in project) package manager console:  Update-Package -reinstall
 4. In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+To install SignalR for Angular:
+npm install ng2-signalr jquery signalr --save
+More details is here https://www.npmjs.com/package/ng2-signalr
+
+Note that this library is only compatible with ASP.NET Core
+npm install @aspnet/signalr
+
+To install SignalR for ASP.NET MVC:
+1. Install nuget packages Microsoft.Owin 2.1.0, Microsoft.Owin.WebHost 2.1.0
+
+To add SignlarR services:
+1. ng g service services/signal-r --spec false
+
+
+#### Example of integration SignalR and Angular 2
+
+https://www.c-sharpcorner.com/article/asp-net-signalr-angular2-and-typescript-real-time-clock/
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Code scaffolding
 

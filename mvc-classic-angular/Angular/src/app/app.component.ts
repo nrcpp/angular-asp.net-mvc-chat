@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import JoggingRecord from '../shared/JoggingRecord';
 import ApiService from '../shared/api.service';
 //import { HubConnection } from '@aspnet/signalr';
-
+import { SignalR, SignalRConnection } from 'ng2-signalr';
 
 
 @Component({
@@ -14,30 +14,23 @@ import ApiService from '../shared/api.service';
 
 export class AppComponent implements OnInit {
   joggingRecords: Array<JoggingRecord>;
-  private hubConnection: signalR.HubConnection;
-
-  constructor(private apiService: ApiService) {
-    
+  
+  constructor(private apiService: ApiService, private hubConnection: SignalR) {
+      
   }
 
   public startConnection = () => {
-    this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:50000/signalr')
-      .build();
+    this.hubConnection.connect({
+      jsonp: true, hubName: "ChatHub", url: "http://localhost:50000" }).then((c) => {
+      //do stuff
+      console.log("connected!");
+      c.status.subscribe((s) => console.warn("HEllo from server!!!"));
 
-    this.hubConnection
-      .start()
-      .then(() => console.log('Connection started'))
-      .catch(err => console.log('Error while starting connection: ' + err))
-  }
-
-  public addTransferChartDataListener = () => {
-    this.hubConnection.on('hello', () => {
-      console.log('Hello from server!');
-      //console.log(data);
+    }).catch((e) => {
+      console.log("Error connecting to hub:  " + e);
     });
   }
-
+  
   ngOnInit() {
     this.apiService.getAll().subscribe(data => {
       this.joggingRecords = data;

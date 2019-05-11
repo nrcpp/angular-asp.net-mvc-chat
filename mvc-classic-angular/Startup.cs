@@ -1,6 +1,7 @@
 ﻿using Owin;
 using Microsoft.Owin;
 using Microsoft.AspNet.SignalR;
+using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(mvc_classic_angular.Startup))]
 namespace mvc_classic_angular
@@ -9,7 +10,19 @@ namespace mvc_classic_angular
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR();
+            app.UseCors(CorsOptions.AllowAll);
+
+            app.Map("/signalr", map =>
+            {            
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration
+                {
+                    EnableJSONP = true
+                };
+                map.RunSignalR(hubConfiguration);
+            });
+
+            //app.MapSignalR();
 
             // Any connection or hub wire up and configuration should go here
             //app.MapSignalR("/chat", new HubConfiguration()

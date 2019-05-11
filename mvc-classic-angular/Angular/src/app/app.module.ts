@@ -13,8 +13,8 @@ import { SignalRConfiguration } from 'ng2-signalr';
 export function createConfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'ChatHub';
-  c.qs = { user: 'alon' };
-  c.url = 'http://localhost:5000/signalr';
+  //c.qs = { user: 'alon' };
+  c.url = 'http://localhost:5000';
   c.logging = true;
 
   // >= v5.0.0

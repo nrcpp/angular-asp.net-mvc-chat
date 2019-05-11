@@ -48,7 +48,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/signalr/jquery.signalR.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -106,7 +109,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/signalr/jquery.signalR.js"
             ],
             "assets": [
               "src/favicon.ico",

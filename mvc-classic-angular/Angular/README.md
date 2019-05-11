@@ -22,6 +22,11 @@ To install SignalR for ASP.NET MVC:
 To add SignlarR services:
 1. ng g service services/signal-r --spec false
 
+To add CORS for ChatHub:
+1. Install Microsoft.Owin.Cors packages
+2. See example https://stackoverflow.com/questions/9984534/how-to-use-cross-domain-connections-cors-access-control-allow-origin-with-si/9984798
+3. To enable CORS for WebApi see https://stackoverflow.com/questions/32132763/mvc-web-api-cors-policy-not-working/32152011#32152011
+ 
 
 #### Example of integration SignalR and Angular 2
 

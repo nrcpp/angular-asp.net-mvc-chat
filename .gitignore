@@ -384,3 +384,4 @@ testem.log
 Thumbs.db
 mvc-classic-angular/Angular/dist/
 mvc-classic-angular/Bundles/AngularOutput/
+AngularSignalRChat/Bundles/AngularOutput/

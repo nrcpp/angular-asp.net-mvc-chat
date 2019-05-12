@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc-classic-angular", "mvc-classic-angular\mvc-classic-angular.csproj", "{97FE4594-C4AC-4583-B03A-840C10F4A44A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularSignalRChat", "AngularSignalRChat\AngularSignalRChat.csproj", "{97FE4594-C4AC-4583-B03A-840C10F4A44A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		{97FE4594-C4AC-4583-B03A-840C10F4A44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97FE4594-C4AC-4583-B03A-840C10F4A44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97FE4594-C4AC-4583-B03A-840C10F4A44A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82BEAEAD-9675-4F5B-8953-E495B0ED3CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82BEAEAD-9675-4F5B-8953-E495B0ED3CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82BEAEAD-9675-4F5B-8953-E495B0ED3CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82BEAEAD-9675-4F5B-8953-E495B0ED3CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

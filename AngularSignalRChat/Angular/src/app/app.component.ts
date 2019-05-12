@@ -34,6 +34,9 @@ export class AppComponent implements OnInit {
   }
 
   public addNewMessageToPage = (name, contact, message, time) => {
+    if (contact == 'All' && this.activeContact != "All")
+      return;
+    
     console.warn(`[${time}]: ${name} to ${contact}: ${message}`);
 
     this.messages.push({
@@ -41,6 +44,16 @@ export class AppComponent implements OnInit {
       contact: contact,
       message: message,
       time: time
+    });
+  }
+
+  onGoToChatWith(contact) {
+    //alert(contact); 
+    this.activeContact = contact;
+    this.messages = [];
+    this.contacts = [];
+    this.connection.invoke('Connect', this.nick, this.activeContact).then(() => {
+      console.info('Notify hub for new connection of ' + this.nick);
     });
   }
 

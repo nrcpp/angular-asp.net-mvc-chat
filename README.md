@@ -8,14 +8,14 @@
 4. Clean, build and run ASP.NET MVC solution which will automatically launch SignalR hub and renders Angular client in browser
 
 **Troubleshooting if such errors appeared:**
-5. (Optionally, if refrences not found in project) use package manager console:  
+- (Optionally, if refrences not found in project) use package manager console:  
 Update-Package -reinstall
-6. In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
-7. In case of "IIS error" on running application from Visual Studio:
-- Remove %userprofile%\Documents\IIS Express folder
-- Remove .vs folder in the solution root folder
-- If this doesn't help then restart Visual Studio as Administrator 
-8. In case of connection refused error, then change starting port to another one,
+- In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
+- In case of "IIS error" on running application from Visual Studio:
+  - Remove %userprofile%\Documents\IIS Express folder
+  - Remove .vs folder in the solution root folder
+  - If this doesn't help then restart Visual Studio as Administrator 
+- In case of connection refused error, then change starting port to another one,
 and then find all  occurrences of "localhost:" in Angular files and replace them with *new port*.
 By default this webapp points to localhost:33333, you could change it to another port, but update Angular settings as well.
 
@@ -29,7 +29,8 @@ NOTE: use **ng2-signalr** for classic ASP.NET 4.5, not @aspnet/signalr which is 
  Documentation for this lib is here https://www.npmjs.com/package/ng2-signalr
 
 
-> Use command below for *ASP.NET Core* project (not this one):
+> Use command below for *ASP.NET Core* project (but **not for this project**):
+
 > npm install @aspnet/signalr
 
 **To install SignalR for ASP.NET MVC:**

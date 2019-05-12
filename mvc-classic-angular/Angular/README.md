@@ -4,10 +4,11 @@ USE this link for instructions:
 https://developer.okta.com/blog/2018/12/21/build-basic-web-app-with-mvc-angular
 
 Build instructions after clone:
-1. npm install
-2. ng build --extractCss --watch
-3. (Optionally, if refrences not found in project) package manager console:  Update-Package -reinstall
-4. In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
+1. cd (projecdir)/angular
+2. npm install
+3. ng build --extractCss --watch
+4. (Optionally, if refrences not found in project) package manager console:  Update-Package -reinstall
+5. In case of "roslyn\csc.exe not found" error, re-install/update "Microsoft.CodeDom.Providers" nuget package
 
 To install SignalR for Angular:
 npm install ng2-signalr jquery signalr --save

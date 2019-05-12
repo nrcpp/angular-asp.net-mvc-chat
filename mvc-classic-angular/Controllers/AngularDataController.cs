@@ -8,12 +8,11 @@ using System.Web.Mvc;
 
 namespace mvc_classic_angular.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AngularDataController : Controller
     {
         // GET: AngularData
-        [HttpGet()]
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [HttpGet()]        
         public ActionResult Index()
         {
             return View();

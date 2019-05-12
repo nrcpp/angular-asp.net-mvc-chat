@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   public startConnection = () => {
     this.hubConnection.connect({
-      jsonp: true, hubName: "ChatHub", url: "http://localhost:50000" }).then((c) => {
+      jsonp: true, hubName: "ChatHub", url: "http://localhost:33333" }).then((c) => {
       //do stuff
       console.log("connected!");
       c.status.subscribe((s) => console.warn("HEllo from server!!!"));

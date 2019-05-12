@@ -21,7 +21,7 @@ namespace mvc_classic_angular
         public DateTime CreatedAt { get; set; }
     }
 
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class JoggingRecordsController : ApiController
     {
         List<JoggingRecord> JoggingRecords = new List<JoggingRecord>() {

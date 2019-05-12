@@ -7,8 +7,7 @@ using System.Web.Http.Cors;
 using System.Web.Mvc;
 
 namespace mvc_classic_angular.Controllers
-{
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+{    
     public class HomeController : Controller
     {
         public ActionResult Index()

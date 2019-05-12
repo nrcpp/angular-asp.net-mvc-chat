@@ -6,7 +6,7 @@ import JoggingRecord from './JoggingRecord';
 
 @Injectable()
 export default class ApiService {
-  public API = 'http://localhost:50000/api';
+  public API = 'http://localhost:33333/api';
   public JOGGING_RECORDS_ENDPOINT = `${this.API}/joggingrecords`;
 
   constructor(private http: HttpClient) { }

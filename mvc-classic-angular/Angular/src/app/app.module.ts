@@ -14,7 +14,7 @@ export function createConfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'ChatHub';
   //c.qs = { user: 'alon' };
-  c.url = 'http://localhost:5000';
+  c.url = 'http://localhost:33333';
   c.logging = true;
 
   // >= v5.0.0

@@ -1,3 +1,20 @@
 <ChatData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <HistoryMessages />
+  <Users>
+    <Name>All</Name>
+    <Status>offline</Status>
+    <Contacts />
+  </Users>
+  <Users>
+    <Name>u1</Name>
+    <Status>offline</Status>
+    <Contacts />
+  </Users>
+  <HistoryMessages>
+    <Message>
+      <Content>msg1</Content>
+      <Time>12.05.2019 18:10:16</Time>
+      <FromUser>u1</FromUser>
+      <ToUser>All</ToUser>
+    </Message>
+  </HistoryMessages>
 </ChatData>

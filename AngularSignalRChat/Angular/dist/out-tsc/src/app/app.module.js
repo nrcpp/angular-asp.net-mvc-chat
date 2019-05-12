@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import ApiService from '../shared/api.service';
 import { SignalRModule } from 'ng2-signalr';
 import { SignalRConfiguration } from 'ng2-signalr';
+import { FormsModule } from '@angular/forms';
 // >= v2.0.0
 export function createConfig() {
     var c = new SignalRConfiguration();
@@ -30,7 +31,8 @@ var AppModule = /** @class */ (function () {
             imports: [
                 HttpClientModule,
                 BrowserModule,
-                SignalRModule.forRoot(createConfig)
+                SignalRModule.forRoot(createConfig),
+                FormsModule,
             ],
             providers: [ApiService],
             bootstrap: [AppComponent]

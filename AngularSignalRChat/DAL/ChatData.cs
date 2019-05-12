@@ -100,9 +100,9 @@ namespace AngularSignalRChat
                     ToUser = contactName,
                     Time = DateTime.Now.ToString(),
                 });
-            }
 
-            Instance.Save();
+                Instance.Save();
+            }            
         }
 
         #region Save/Load and serialization

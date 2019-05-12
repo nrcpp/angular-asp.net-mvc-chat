@@ -43,7 +43,17 @@ export class AppComponent implements OnInit {
       time: time
     });
   }
-   
+
+  onSendClick() {
+    this.connection.invoke('Send', this.nick, this.activeContact, this.message);
+    this.message = '';
+  }
+
+  onSendKey(event: KeyboardEvent) {
+    if (event.keyCode == 13 || event.which == 13)
+      this.onSendClick();
+  }
+
   public startConnection = () => {
     this.hubConnection.connect({ jsonp: true, hubName: "ChatHub", url: "http://localhost:33333" }).then((conn) => {
 

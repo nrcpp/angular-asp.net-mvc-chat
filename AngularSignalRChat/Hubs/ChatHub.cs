@@ -47,6 +47,30 @@ namespace AngularSignalRChat
             return base.OnDisconnected(stopCalled);
         }
 
+        private ChatData.User GetOrRegisterUser(string name)
+        {
+            var user = ChatData.Instance.Users.FirstOrDefault(u => u.Name == name);
+            if (user != null)
+                return user;
+
+            // register
+            else if (!string.IsNullOrWhiteSpace(name))
+            {
+                user = new ChatData.User()
+                {
+                    Name = name,
+                };
+
+                ChatData.Instance.Users.Add(user);
+                ChatData.Instance.Save();
+
+                return user;
+            }
+
+            else
+                return null;
+        }
+
         public void Connect(string name, string contact)
         {
             var pair = _userConnections.FirstOrDefault(u => u.Value.Name == name);
@@ -56,11 +80,8 @@ namespace AngularSignalRChat
                     return;
             }
 
-            var newUser = new ChatData.User()
-            {
-                Name = name,
-                ConnectionId = Context.ConnectionId,
-            };
+            var newUser = GetOrRegisterUser(name);
+            newUser.ConnectionId = Context.ConnectionId;            
 
             if (!_userConnections.TryAdd(name, newUser))
                 return;

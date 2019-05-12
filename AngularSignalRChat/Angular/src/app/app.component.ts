@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Contact, ChatMessage } from '../shared/Models';
 import ApiService from '../shared/api.service';
-//import { HubConnection } from '@aspnet/signalr';
 import { SignalR, SignalRConnection, ISignalRConnection } from 'ng2-signalr';
 import { concat } from 'rxjs';
 

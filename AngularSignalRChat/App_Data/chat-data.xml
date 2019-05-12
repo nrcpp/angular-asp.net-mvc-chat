@@ -19,6 +19,11 @@
     <Status>offline</Status>
     <Contacts />
   </Users>
+  <Users>
+    <Name>Denis Kazakov#</Name>
+    <Status>offline</Status>
+    <Contacts />
+  </Users>
   <HistoryMessages>
     <Message>
       <Content>msg1</Content>
@@ -91,6 +96,30 @@
       <Time>12.05.2019 18:47:51</Time>
       <FromUser>u1</FromUser>
       <ToUser>u2</ToUser>
+    </Message>
+    <Message>
+      <Content>to all</Content>
+      <Time>12.05.2019 20:16:06</Time>
+      <FromUser>u2</FromUser>
+      <ToUser>All</ToUser>
+    </Message>
+    <Message>
+      <Content>how are you</Content>
+      <Time>12.05.2019 20:16:20</Time>
+      <FromUser>u2</FromUser>
+      <ToUser>u1</ToUser>
+    </Message>
+    <Message>
+      <Content>hello</Content>
+      <Time>12.05.2019 20:16:52</Time>
+      <FromUser>Denis Kazakov#</FromUser>
+      <ToUser>u2</ToUser>
+    </Message>
+    <Message>
+      <Content>zeig heil</Content>
+      <Time>12.05.2019 20:17:00</Time>
+      <FromUser>u2</FromUser>
+      <ToUser>Denis Kazakov#</ToUser>
     </Message>
   </HistoryMessages>
 </ChatData>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import JoggingRecord from './JoggingRecord';
+import { JoggingRecord } from './Models';
 
 @Injectable()
 export default class ApiService {

@@ -37,34 +37,6 @@ namespace AngularSignalRChat
             return _userConnections.Where(u => u.Value.Name.Equals(name, StringComparison.OrdinalIgnoreCase)).FirstOrDefault().Value;
         }
 
-        public void Send(string name, string contact, string message)
-        {
-            string time = DateTime.Now.ToString();
-
-            // Call the addNewMessageToPage method to update clients.
-            if (contact == "All")
-            {
-                // we filter messages with active contacts, so it won't appear on personal chats
-                Clients.All.addNewMessageToPage(name, contact, message, time);
-            }
-
-            else
-            {
-                var contactUser = GetContactByName(contact);
-                if (contactUser?.ConnectionId != null)
-                {
-                    // here we have to check, if receiever is active
-                    if (contactUser.ActiveContact?.Name == name)
-                        Clients.Client(contactUser.ConnectionId).addNewMessageToPage(name, contact, message, time);
-                }
-
-                Clients.Caller.addNewMessageToPage(name, contact, message, time);
-            }
-
-            // save to history            
-            ChatData.AddMessageToHistory(name, contact, message);
-        }
-
         public override Task OnConnected()
         {
             return base.OnConnected();
@@ -109,6 +81,59 @@ namespace AngularSignalRChat
                     Clients.Caller.addContact(u.Name, "DEP");
             }
 
+
+            // Load history for this client
+            LoadHistory(name, contact);
+        }
+
+
+        private bool IsMessageInHistory(ChatData.Message historyMsg, string name, string contact)
+        {
+            if (historyMsg.FromUser == name && historyMsg.ToUser == contact) return true;
+
+            if (historyMsg.ToUser == name && historyMsg.FromUser == contact) return true;
+
+            if (contact == "All" && historyMsg.ToUser == "All") return true;
+
+            return false;
+        }
+
+
+        private void LoadHistory(string name, string contact)
+        {
+            var history = ChatData.Instance.HistoryMessages.Where(m => IsMessageInHistory(m, name, contact)).ToList();
+
+            Clients.Caller.clearMessages();
+            foreach (var msg in history)
+                Clients.Caller.addNewMessageToPage(name: msg.FromUser, contact: msg.ToUser, message: msg.Content, time: msg.Time);            
+        }
+
+        public void Send(string name, string contact, string message)
+        {
+            string time = DateTime.Now.ToString();
+
+            // Call the addNewMessageToPage method to update clients.
+            if (contact == "All")
+            {
+                // we filter messages with active contacts, so it won't appear on personal chats
+                Clients.All.addNewMessageToPage(name, contact, message, time);
+            }
+
+            else
+            {
+                var contactUser = GetContactByName(contact);
+                if (contactUser?.ConnectionId != null)
+                {
+                    // here we have to check, if receiever is active
+                    if (contactUser.ActiveContact?.Name == name)
+                        Clients.Client(contactUser.ConnectionId).addNewMessageToPage(name, contact, message, time);
+                }
+
+                Clients.Caller.addNewMessageToPage(name, contact, message, time);
+            }
+
+            // save to history            
+            ChatData.AddMessageToHistory(name, contact, message);
         }
     }
 }

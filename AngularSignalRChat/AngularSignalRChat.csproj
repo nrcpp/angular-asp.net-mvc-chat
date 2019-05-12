@@ -276,7 +276,7 @@
     <TypeScriptCompile Include="Angular\src\main.ts" />
     <TypeScriptCompile Include="Angular\src\polyfills.ts" />
     <TypeScriptCompile Include="Angular\src\shared\api.service.ts" />
-    <TypeScriptCompile Include="Angular\src\shared\JoggingRecord.ts" />
+    <TypeScriptCompile Include="Angular\src\shared\Models.ts" />
     <TypeScriptCompile Include="Angular\src\test.ts" />
   </ItemGroup>
   <PropertyGroup>

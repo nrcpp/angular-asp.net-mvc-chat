@@ -44,7 +44,11 @@ NOTE: use **ng2-signalr** for classic ASP.NET 4.5, not @aspnet/signalr which is 
 3. To enable CORS for WebApi see https://stackoverflow.com/questions/32132763/mvc-web-api-cors-policy-not-working/32152011#32152011
  
 
-[https://www.c-sharpcorner.com/article/asp-net-signalr-angular2-and-typescript-real-time-clock/](Example%20of%20integration%20SignalR%20and%20Angular%202)
+### Related Links
+https://www.c-sharpcorner.com/article/asp-net-signalr-angular2-and-typescript-real-time-clock/
+
+https://developer.okta.com/blog/2018/12/21/build-basic-web-app-with-mvc-angular
+
 
 
 
